@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+
+    <link href="styles/style.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header" id="inicio">
+            <div class="contenedor-head">
+                <div class="logo-imagen">
+                    <img src="assets/Logo.png" alt="Alura">
+                </div>
+                <div class="logo-nombre">
+                    <h1 class="titulo">Encriptador de Texto</h1>
+                    <p class="copy">Challenge - Alura</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="section1">
+            <div class="container-textarea">
+                <textarea id="iTextEntry" name="iTextEntry" class="styled-textarea" placeholder="Ingresa un mensaje"></textarea>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div>
+                <p class="copy"><i class='bx bxs-info-circle'></i> Solo letras minúsculas y sin acentos</p>
+            </div>
+            <br>
+            <div>
+                <button class="styled-button" id="bEncript">Encriptar</button>
+                <button class="inverted-button" id="bDesencript">Desencriptar</button>
+            </div>
+        </div>
+
+        <div class="section3">
+            <div class="textbox-result" id="textbox-result">
+                <img src="assets/Muneco.png" alt="Alura">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p id='text-result'>Ingresa el texto que desees encriptar o desencriptar</p>
+                <button class="inverted-button" id="bPortapapeles" style="display: none;">Copiar</button>
+            </div>
+        </div>
+        
+    </div>
+    <footer id="footer">
+        <div class="footer-content" id="contacto">
+            <div class="contact-us">
+                <h2 class="brand">Challenge - Encriptador de Texto</h2>
+                <p class="copy-contact">
+                     Andre Huancas - Chunchster
+                </p>
+            </div>
+            <div class="social-media">
+                <a href="https://github.com/Chunchster" target="_blank" class="social-media-icon">
+                    <i class='bx bxl-github'></i>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+    <script src="js/encriptar.js"></script>
+    <script src="js/desencriptar.js"></script>
+    <script src="js/portapapeles.js"></script>
+</body>
+</html>
