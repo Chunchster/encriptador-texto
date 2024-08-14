@@ -12,6 +12,14 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.setHide{
+    display: none;
+}
+
+.setWarning{
+    color: red;
+}
+
 .container {
     display: grid;
     grid-template-areas: 
