@@ -1,18 +1,32 @@
 document.getElementById('bEncript').addEventListener('click', function() {
     const textArea = document.getElementById('iTextEntry');
-    const divResult = document.getElementById('textbox-result');
     let texto = textArea.value;
 
     if (!texto || texto == ''){
-        divResult.innerHTML = `<img src="assets/Muneco.png" alt="Alura">
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p id='text-result'>Ingresa el texto que desees encriptar o desencriptar</p>
-        <button class="inverted-button" id="bPortapapeles" style="display: none;">Copiar</button>`;
+        document.getElementById("textbox-img").classList.remove("setHide");
+        document.getElementById("textbox-title").classList.remove("setHide");
+
+        document.getElementById("text-result").classList.remove("setWarning");
+        document.getElementById("text-result").textContent = "Ingresa el texto que desees encriptar o desencriptar";
+        document.getElementById("bPortapapeles").classList.remove("setHide");
+        document.getElementById("bPortapapeles").classList.add("setHide");
 
         textArea.placeholder = 'Ingresa un mensaje';
     } else {
+        document.getElementById("textbox-img").classList.remove("setHide");
+        document.getElementById("textbox-img").classList.add("setHide");
+
+        document.getElementById("textbox-title").classList.remove("setHide");
+        document.getElementById("textbox-title").classList.add("setHide");
+
         if (!/^[a-z\s]*$/.test(texto)) {
-            divResult.innerHTML = "<p style='color: red;'>El mensaje a <b>Encriptar</b> debe contener solo letras minúsculas y sin acento</p>";
+            document.getElementById("text-result").textContent = "El mensaje a ENCRIPTAR debe contener solo letras minúsculas y sin acento";
+            document.getElementById("text-result").classList.remove("setWarning");
+            document.getElementById("text-result").classList.add("setWarning");
+
+            document.getElementById("bPortapapeles").classList.remove("setHide");
+            document.getElementById("bPortapapeles").classList.add("setHide");
+
             textArea.value = '';
             return;
         }
@@ -23,8 +37,8 @@ document.getElementById('bEncript').addEventListener('click', function() {
                                 .replace(/o/g, "ober")
                                 .replace(/u/g, "ufat");
     
-        divResult.innerHTML = `<p id='text-result'>${encriptado}</p>
-        <button class="inverted-button" id="bPortapapeles">Copiar</button>`;
+        document.getElementById("text-result").textContent = encriptado;
+        document.getElementById("bPortapapeles").classList.remove("setHide");
         textArea.value = '';
     }
 });
